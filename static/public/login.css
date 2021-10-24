@@ -1,0 +1,31 @@
+.google-login {
+    display: flex;
+    align-items: center;
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 3px 3px;
+    background: transparent;
+
+    color: #46A5E2;
+    border-color: #46A5E2;
+    background-color: #fff;
+    border: 1.8px solid;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease 0.1s;
+}
+
+.google-login:hover {
+    transform: translateY(-5%);
+
+    color: #468BE2;
+    border-color: #468BE2;
+}
+
+.google-login img {
+    width: 25px;
+    height: 25px;
+}

@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #11101d;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo-content .logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo-content .logo {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logo-content .logo i {
+    font-size: 28px;
+    margin-right: 5px;
+    float: left;
+}
+
+.logo-content .logo .logo-name {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.sidebar #btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    border-radius: 12px;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    left: 122px;
+    top: 50%;
+    transform: translateY(-50%, -50%);
+
+    border-radius: 6px;
+    padding: 0 4px 4px 4px;
+    height: 35px;
+    width: max-content;
+    display: block;
+
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+
+    line-height: 35px;
+    text-align: center;
+
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+
+}
+
+.sidebar ul li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background: #fff;
+}
+
+.sidebar ul li i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .links-name {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .links-name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar .profile-content {
+    position: absolute;
+    color: #fff !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.sidebar .profile-content .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background: none;
+    transition: all 0.4s ease;
+}
+
+.sidebar.active .profile-content .profile {
+    background: #1d1b31;
+}
+
+.sidebar.active .profile-content .profile a {
+    color: #fff;
+}
+
+.profile-content .profile .profile-details {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active .profile .profile-details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.profile .profile-details img {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.profile .profile-details .name-job {
+    margin-left: 10px;
+}
+
+.profile .profile-details .name {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.profile .profile-details .email {
+    font-size: 12px;
+}
+
+.profile #log-out {
+    position: absolute;
+    left: 20%;
+    bottom: 5px;
+    translate: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: #1d1b31;
+}
+
+.sidebar.active .profile #log-out {
+    left: 88%;
+    background: none;
+}
+
+.main-content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    padding: 10px 10px;
+}
+
+.sidebar.active ~ .main-content {
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
+.main-content .welcome {
+    margin: 5px;
+}
+
+.main-content #line-chart {
+    width: 80rem;
+    height: 50rem;
+}
+
+.logout-popup {
+    visibility: hidden;
+    display: none;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    align-items: center;
+    z-index: 9;
+
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    color: #11101d;
+    border-radius: 12px;
+
+    transform: translateY(-40px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+
+.logout-popup.is-visible {
+    visibility: visible;
+    display: inline;
+    position: relative;
+    background-color: #11101d;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.logout-popup .container {
+    position: relative;
+    transform: translateY(-40px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+
+    justify-content: center;
+}
+
+.logout-popup .container .buttons {
+    align-items: center;
+    justify-content: center;
+}
+
+.is-visible .container {
+    visibility: 1;
+    transform: translateY(40px);
+    color: #11101d;
+}

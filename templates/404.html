@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="grid place-items-center">
+        <img class="mb-5 mt-5" src="{{ url_for('static',filename='bin/logo.png') }}" alt="">
+        <h1 class="text-xl">Something went wrong.</h1>
+        <a href="/">
+            <div class="bg-green-500 text-white p-3 shadow-md mt-5" href="/">Back to Home Page</div>
+        </a>
+    </div>
+{% endblock %}

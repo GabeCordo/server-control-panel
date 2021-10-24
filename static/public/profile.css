@@ -1,0 +1,63 @@
+.profilepage {
+    padding: 35px 35px;
+    height: 100%;
+    width: 50%;
+}
+
+.profilepage .immutable {
+    padding: 10px 10px;
+    background: #e8e8e8;
+    margin-bottom: 29px;
+}
+
+.profilepage .mutable {
+
+}
+
+.profilepage .mutable .block {
+    padding: 10px 10px;
+    background: #e8e8e8;
+    margin-bottom: 5px;
+    border-radius: 2px;
+}
+
+.profilepage .mutable .block form {
+    display: table
+}
+
+.profilepage .mutable .block p {
+    display: table-row;
+}
+
+.profilepage .mutable .block label {
+    display: table-cell;
+}
+
+.profilepage .mutable .block input {
+    display: table-cell;
+    color: #1d1b31;
+}
+
+.profilepage .mutable .block h5 {
+    color: #1d1b31;
+}
+
+#kraken-update {
+    visibility: hidden;
+    display: none;
+}
+
+#kraken-update.is-visible {
+    visibility: visible;
+    display: block;
+}
+
+#cryptocom-update {
+    visibility: hidden;
+    display: none;
+}
+
+#cryptocom-update.is-visible {
+    visibility: visible;
+    display: block;
+}

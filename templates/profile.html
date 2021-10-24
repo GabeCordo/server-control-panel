@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="profilepage">
+        <div class="immutable">
+            <img src={{ user.profile_picture }}>
+            <h3>{{ user.username }}</h3>
+            <p>{{ user.email }}</p>
+        </div>
+        <div class="mutable">
+            <div class="block other">
+                <h5>Timezone</h5>
+                <select name="timezones" id="timezones">
+                    <option value="EST">Eastern Standard Time</option>
+                </select>
+            </div>
+            <div class="block kraken">
+                <h5>Kraken</h5>
+                <form>
+                    <p>
+                        <label for="kraken-api">API Key</label>
+                        <input type="text" id="kraken-api" name="kraken-api">
+                    </p>
+                    <p>
+                        <label for="kraken-secret">Secret Key</label>
+                        <input type="text" id="kraken-secret" name="kraken-secret">
+                    </p>
+                    <input id="kraken-update" type="submit">
+                </form>
+                <script>
+                    document.getElementById("kraken-api").setAttribute('value','{{ kraken_api }}');
+                    document.getElementById("kraken-secret").setAttribute('value','{{ kraken_secret }}');
+                </script>
+            </div>
+            <div class="block cryptocom">
+                <h5>Crypto.com</h5>
+                <form>
+                    <p>
+                        <label for="cyrptocom-api">API Key</label>
+                        <input type="text" id="cyrptocom-api" name="cyrptocom-api">
+                    </p>
+                    <p>
+                        <label for="cyrptocom-secret">Secret Key</label>
+                        <input type="text" id="cyrptocom-secret" name="cyrptocom-secret">
+                    </p>
+                    <input id="cryptocom-update" type="submit">
+                </form>
+                <script>
+                    document.getElementById("cyrptocom-api").setAttribute('value','{{ cryptocom_api }}');
+                    document.getElementById("cyrptocom-secret").setAttribute('value','{{ cryptocom_secret }}');
+                </script>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='javascript/profile.js') }}"></script>
+{% endblock %}

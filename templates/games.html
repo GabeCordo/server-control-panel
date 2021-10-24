@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<header>
+    <h2 class="text-gray-700 text-3xl font-semibold">Networking</h2>
+</header>
+
+<div class="mt-8"> <!-- games section -->
+    <h4 class="font-bold mt-12 mb-3 pb-2 border-b border-gray-200">Supported Games</h4>
+    <!-- cards go here -->
+    {% for game in supported_games %}
+    <div class="card">
+        <img class="w-full" src="{{url_for('static', filename=game[4])}}" alt="">
+        <div class="m-4">
+            <span class="font-semibold">{{game[0]}}</span>
+            <span class="text-red-500">{{game[1]}}</span>
+        </div>
+        {% if game[3] == 1 %}
+            <div class="card-badge bg-green-500 text-green-300">
+                <h5>Available</h5>
+            </div>
+        {% elif game[3] == 2 %}
+            <div class="card-badge bg-red-500 text-red-300">
+                <h5>Unavailable</h5>
+            </div>
+        {% elif game[3] == 3 %}
+            <div class="card-badge bg-blue-500 text-blue-300">
+                <h5>Coming Soon</h5>
+            </div>
+        {% elif game[3] == 4 %}
+            <div class="card-badge bg-gray-500 text-gray-300">
+                <h5>Future</h5>
+            </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

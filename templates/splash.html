@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Ragetech Networking</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{url_for('static',filename='public/styles.css')}}">
+</head>
+<body class="bg-splash">
+    {% block content %}{% endblock %}
+</body>
+</html>

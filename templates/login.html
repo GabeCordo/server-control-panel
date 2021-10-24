@@ -1,0 +1,20 @@
+{% extends "splash.html" %}
+
+{% block content %}
+    <div class="grid place-items-center">
+        <div class="grid place-items-center bg-white rounded-md w-1/4 mt-20 p-5 shadow-lg">
+            <img class="mb-5 mt-5" src="{{ url_for('static',filename='bin/logo.png') }}" alt="">
+            <h5 class="text-xl font-semibold">Login to Continue</h5>
+            <h3 class="text-gray-400 border-b-2 border-gray-200 pb-4">Use one of our sign-in partners.</h3>
+            <a class="shadow-md m-4" href="/login">
+                <div class="flex items-center border shadow-md w-56 pt-1 pb-1 pl-2 pr-2 bg-white">
+                    <img class="w-10" src="{{ url_for('static',filename='bin/google.png') }}" alt="">
+                    <h5 class="description ml-2 font-medium text-gray-700">Sign in with Google</div>
+                </div>
+            </a>
+        </div>
+        <div class="grid place-items-center text-white">
+            <h4 class="text-gray-200 text-sm">Ragetech Networking © 2021 All rights reserved.</h4>
+        </div>
+    </div>
+{% endblock %}
